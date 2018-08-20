@@ -10,10 +10,6 @@ set guifont=Operator\ Mono:h14
 set number
 set showmatch
 
-"" Maps
-""
-map <leader>s :source ~/.vimrc<CR>
-
 "" Indents
 ""
 filetype indent on
@@ -23,19 +19,26 @@ set shiftwidth=2
 set expandtab
 set smartindent
 set autoindent
+" enable mouse interractions
+set mouse=a
 
 "" On save
 ""
 " remove redundant whitespaces
 autocmd BufWritePre * :%s/\s\+$//e
 
-" reopen previously closed file
-nnoremap <Leader><Leader> :e#<CR>
+"" Maps
+""
+execute 'source '.s:path.'/maps.vim'
+
+"" Plugins
+""
+execute 'source '.s:path.'/plugins.vim'
 
 "" Source other non-init.vim files this
 "" currently includes plugins.vim only
 ""
-let s:confs = split(globpath(s:path, '*.vim'), '\n')
+let s:confs = split(globpath(s:path, 'plugins-configs/*.vim'), '\n')
 
 for conf in s:confs
   if conf !~ '.*init\.vim$'

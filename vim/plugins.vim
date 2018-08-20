@@ -10,4 +10,7 @@ call plug#begin(plugins_home)
 "" Define plugins to use here
 ""
 
+" Side bar file explorer
+Plug 'scrooloose/nerdtree'
+
 call plug#end()

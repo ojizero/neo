@@ -8,6 +8,7 @@ AUTO_PATH := $(CONF_PATH)/autoload
 VIMRC_PATH := $(CONF_PATH)/init.vim
 MAPS_PATH := $(CONF_PATH)/maps.vim
 PLUGINS_VIM_PATH := $(CONF_PATH)/plugins.vim
+PLUGINS_CONFIGS_PATH := $(CONF_PATH)/plugins-configs
 COLORS_PATH := $(CONF_PATH)/colors
 PLUGINS_DATA_PATH := $(DATA_PATH)/plugins
 
@@ -37,11 +38,14 @@ mk-dirs:
 	@\mkdir -pv $(PLUGINS_DATA_PATH) ;
 
 mk-symlinks:
-	@\ln -sv $(abspath ./vim/autoload)    $(AUTO_PATH)        ;
-	@\ln -sv $(abspath ./vimrc)           $(VIMRC_PATH)       ;
-	@\ln -sv $(abspath ./vim/maps.vim)      $(MAPS_PATH)      ;
-	@\ln -sv $(abspath ./vim/colors)      $(COLORS_PATH)      ;
+	@\ln -sv $(abspath ./vimrc) $(VIMRC_PATH) ;
+
+	@\ln -sv $(abspath ./vim/autoload) $(AUTO_PATH) ;
+	@\ln -sv $(abspath ./vim/maps.vim) $(MAPS_PATH) ;
+	@\ln -sv $(abspath ./vim/colors) $(COLORS_PATH) ;
+
 	@\ln -sv $(abspath ./vim/plugins.vim) $(PLUGINS_VIM_PATH) ;
+	@\ln -sv $(abspath ./vim/plugins-confs) $(PLUGINS_CONFIGS_PATH) ;
 
 # Deleting CONF_PATH removes
 # all of the configs made
