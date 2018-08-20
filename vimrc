@@ -1,4 +1,6 @@
-"" section-name
+let s:path = expand('<sfile>:p:h')
+
+"" Misc
 ""
 filetype on
 syntax on
@@ -30,7 +32,13 @@ autocmd BufWritePre * :%s/\s\+$//e
 " reopen previously closed file
 nnoremap <Leader><Leader> :e#<CR>
 
-
-"" Enable plugins
+"" Source other non-init.vim files this
+"" currently includes plugins.vim only
 ""
-" source the plugins file
+let s:confs = split(globpath(s:path, '*.vim'), '\n')
+
+for conf in s:confs
+  if conf !~ '.*init\.vim$'
+    execute 'source '.conf
+  endif
+endfor
