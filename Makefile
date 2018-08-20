@@ -15,8 +15,7 @@ PLUGINS_DATA_PATH := $(DATA_PATH)/plugins
 # backup old stuff
 # symlink current conf
 # {{~/.config}}/nvim/init.vim
-setup: backup mk-dirs mk-symlinks
-	@nvim +PlugInstall +qall
+setup: backup mk-dirs mk-symlinks vim-install
 
 # Update conf
 update:
@@ -46,6 +45,9 @@ mk-symlinks:
 
 	@\ln -sv $(abspath ./vim/plugins.vim) $(PLUGINS_VIM_PATH) ;
 	@\ln -sv $(abspath ./vim/plugins-confs) $(PLUGINS_CONFIGS_PATH) ;
+
+vim-install:
+	@nvim +PlugInstall +qall
 
 # Deleting CONF_PATH removes
 # all of the configs made
