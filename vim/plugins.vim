@@ -12,5 +12,6 @@ call plug#begin(plugins_home)
 
 " Side bar file explorer
 Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
 
 call plug#end()
