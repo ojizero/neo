@@ -47,7 +47,7 @@ mk-symlinks:
 	@\ln -sv $(abspath ./vim/plugins-confs) $(PLUGINS_CONFIGS_PATH) ;
 
 vim-install:
-	@nvim +PlugInstall +qall
+	@\nvim +PlugInstall +qall
 
 # Deleting CONF_PATH removes
 # all of the configs made

@@ -14,4 +14,13 @@ call plug#begin(plugins_home)
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 
+" Additional manipulations quotes and brackets ... etc
+" Plug 'tpope/vim-surround'
+
+" Un/comment multiple lines
+Plug 'scrooloose/nerdcommenter'
+
+" Intellisense features
+Plug 'Valloric/YouCompleteMe'
+
 call plug#end()
