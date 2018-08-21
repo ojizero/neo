@@ -26,4 +26,7 @@ Plug 'Valloric/YouCompleteMe'
 " GitGutter
 Plug 'airblade/vim-gitgutter'
 
+" Rename open buffers
+Plug 'vim-scripts/Rename'
+
 call plug#end()
