@@ -15,7 +15,7 @@ PLUGINS_DATA_PATH := $(DATA_PATH)/plugins
 # backup old stuff
 # symlink current conf
 # {{~/.config}}/nvim/init.vim
-setup: backup mk-dirs mk-symlinks vim-install
+setup: backup mk-dirs mk-symlinks vim-installs
 
 # Update conf
 update:
@@ -46,13 +46,24 @@ mk-symlinks:
 	@\ln -sv $(abspath ./vim/plugins.vim) $(PLUGINS_VIM_PATH) ;
 	@\ln -sv $(abspath ./vim/plugins-confs) $(PLUGINS_CONFIGS_PATH) ;
 
-vim-install:
-	@\nvim +PlugInstall +qall
+vim-installs: vim-PlugInstall
+	@\pip3 install --user --upgrade neovim ;
+
+# This may fails on C#
+you-complete-me-install-all:
+	@\python3 $(PLUGINS_DATA_PATH)/YouCompleteMe/install.py --all ;
+
+vim-PlugInstall:
+	@\nvim -u $(PLUGINS_VIM_PATH) +PlugInstall +qall ;
 
 # Deleting CONF_PATH removes
 # all of the configs made
 rm-dirs:
-	@\rm -rfv $(CONF_PATH) ;
+	@\echo 'Removing `$(CONF_PATH)` if exists' ;
+	@\rm -rf $(CONF_PATH) ;
+	@\echo 'Removing `$(DATA_PATH)` if exists' ;
+	@\rm -rf $(DATA_PATH) ;
 
+# Noop
 rm-symlinks:
-	@\rm -rfv $(PLUGINS_DATA_PATH) ;
+	@:
