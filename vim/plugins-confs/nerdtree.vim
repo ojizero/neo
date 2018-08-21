@@ -1,3 +1,9 @@
+let NERDTreeIgnore = [
+      \'node_modules',
+      \'dist',
+      \'vendor',
+      \]
+
 " open nerdtree on vim start
 autocmd vimenter * NERDTree
 
