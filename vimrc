@@ -4,9 +4,9 @@ let s:path = expand('<sfile>:p:h')
 ""
 " highlight keywords in comments
 augroup vimrc_todo
-    au!
-    au Syntax * syn match HighlightPatterns /\v<(FIXME|NOTE|TODO|OPTIMIZE|XXX):/
-          \ containedin=.*Comment,vimCommentTitle
+  au!
+  au Syntax * syn match HighlightPatterns /\v<(FIXME|NOTE|TODO|OPTIMIZE|XXX):/
+        \ containedin=.*Comment,vimCommentTitle
 augroup END
 hi def link HighlightPatterns Todo
 
@@ -14,7 +14,11 @@ filetype on
 syntax on
 " colorscheme THEME
 set guifont=Operator\ Mono:h14
-" set colorcolumn=90
+
+" set highlight indicating long lines
+set colorcolumn=90
+highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
+
 set number
 set showmatch
 
