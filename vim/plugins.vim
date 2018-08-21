@@ -23,4 +23,7 @@ Plug 'scrooloose/nerdcommenter'
 " Intellisense features
 Plug 'Valloric/YouCompleteMe'
 
+" GitGutter
+Plug 'airblade/vim-gitgutter'
+
 call plug#end()
