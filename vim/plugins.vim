@@ -29,4 +29,7 @@ Plug 'airblade/vim-gitgutter'
 " Rename open buffers
 Plug 'vim-scripts/Rename'
 
+" Multiple cursors support
+Plug 'terryma/vim-multiple-cursors'
+
 call plug#end()
