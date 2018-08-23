@@ -2,6 +2,12 @@ let s:path = expand('<sfile>:p:h')
 
 "" Misc
 ""
+
+" when only one window is left (nerrdtree)
+" don't close, just open an empty buffer
+" this has no effect on :qa, only on :q
+autocmd QuitPre * if winnr('$') == 1 | new | endif
+
 " highlight keywords in comments
 augroup vimrc_todo
   au!
