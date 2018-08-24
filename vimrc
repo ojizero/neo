@@ -8,13 +8,13 @@ let s:path = expand('<sfile>:p:h')
 " this has no effect on :qa, only on :q
 autocmd QuitPre * if winnr('$') == 1 | new | endif
 
-" highlight keywords in comments
-augroup vimrc_todo
-  au!
-  au Syntax * syn match HighlightPatterns /\v<(FIXME|NOTE|TODO|OPTIMIZE|XXX):/
-        \ containedin=.*Comment,vimCommentTitle
+" highlight shebangs as comments (mainly for
+" languages that don't use # for comments)
+augroup shebangs
+  autocmd!
+  autocmd BufEnter * syntax match ShebangPattern /^#!\s\?\([\/\\][^\0\/\\]*[^\/\\]\)*$/
 augroup END
-hi def link HighlightPatterns Todo
+highlight link ShebangPattern Comment
 
 filetype on
 syntax on
@@ -28,6 +28,12 @@ highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 set number
 set showmatch
 
+" enable mouse interractions
+set mouse=a
+
+" write new files when made
+autocmd BufNewFile * :write
+
 "" Indents
 ""
 filetype indent on
@@ -37,8 +43,6 @@ set shiftwidth=2
 set expandtab
 set smartindent
 set autoindent
-" enable mouse interractions
-set mouse=a
 
 "" On save
 ""
@@ -60,6 +64,6 @@ let s:confs = split(globpath(s:path, 'plugins-configs/*.vim'), '\n')
 
 for conf in s:confs
   if conf !~ '.*init\.vim$'
-    execute 'source '.conf
+  execute 'source '.conf
   endif
 endfor
