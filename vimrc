@@ -57,9 +57,7 @@ execute 'source '.s:path.'/maps.vim'
 ""
 execute 'source '.s:path.'/plugins.vim'
 
-"" Source other non-init.vim files this
-"" currently includes plugins.vim only
-""
+" source custom configurations for plugins
 let s:confs = split(globpath(s:path, 'plugins-configs/*.vim'), '\n')
 
 for conf in s:confs
