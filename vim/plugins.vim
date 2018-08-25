@@ -32,4 +32,7 @@ Plug 'vim-scripts/Rename'
 " Multiple cursors support
 Plug 'terryma/vim-multiple-cursors'
 
+" JavaScript improved support
+Plug 'pangloss/vim-javascript'
+
 call plug#end()

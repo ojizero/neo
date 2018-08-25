@@ -61,7 +61,5 @@ execute 'source '.s:path.'/plugins.vim'
 let s:confs = split(globpath(s:path, 'plugins-configs/*.vim'), '\n')
 
 for conf in s:confs
-  if conf !~ '.*init\.vim$'
   execute 'source '.conf
-  endif
 endfor
