@@ -15,6 +15,11 @@ command! -nargs=* CargoTest execute ('! cargo test ' . <q-args>)
 command! -nargs=* CargoUpdate execute ('! cargo update ' . <q-args>)
 command! -complete=file -nargs=+ CargoNew execute ('! cargo new ' . <q-args>)
 
+" assumes the existance of cargo-edit
+command! -nargs=+ CargoAdd execute ('! cargo add ' . <q-args>)
+command! -nargs=+ CargoRm execute ('! cargo rm ' . <q-args>)
+command! -nargs=+ CargoUpgrade execute ('! cargo upgrade ' . <q-args>)
+
 "" Placeholder function, once called it
 "" would cause vim to load this file
 function cargo#init ()
