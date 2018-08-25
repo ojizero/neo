@@ -5,15 +5,15 @@
 " autocmd BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo
 " autocmd BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs setlocal makeprg=cargo
 
-command! -nargs=* CargoBench execute ('cargo bench ' . <q-args>)
-command! -nargs=* CargoBuild execute ('cargo build ' . <q-args>)
-command! -nargs=* CargoCheck execute ('cargo check ' . <q-args>)
-command! -nargs=* CargoClean execute ('cargo clean ' . <q-args>)
-command! -nargs=* CargoDoc execute ('cargo doc ' . <q-args>)
-command! -nargs=* CargoRun execute ('cargo run ' . <q-args>)
-command! -nargs=* CargoTest execute ('cargo test ' . <q-args>)
-command! -nargs=* CargoUpdate execute ('cargo update ' . <q-args>)
-command! -complete=file -nargs=+ CargoNew execute ('cargo new ' . <q-args>)
+command! -nargs=* CargoBench execute ('! cargo bench ' . <q-args>)
+command! -nargs=* CargoBuild execute ('! cargo build ' . <q-args>)
+command! -nargs=* CargoCheck execute ('! cargo check ' . <q-args>)
+command! -nargs=* CargoClean execute ('! cargo clean ' . <q-args>)
+command! -nargs=* CargoDoc execute ('! cargo doc ' . <q-args>)
+command! -nargs=* CargoRun execute ('! cargo run ' . <q-args>)
+command! -nargs=* CargoTest execute ('! cargo test ' . <q-args>)
+command! -nargs=* CargoUpdate execute ('! cargo update ' . <q-args>)
+command! -complete=file -nargs=+ CargoNew execute ('! cargo new ' . <q-args>)
 
 "" Placeholder function, once called it
 "" would cause vim to load this file
