@@ -23,7 +23,7 @@ set guifont=Operator\ Mono:h14
 
 " set highlight indicating long lines
 set colorcolumn=90
-highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
+highlight ColorColumn ctermbg=darkgrey guibg=darkgrey
 
 set number
 set showmatch
