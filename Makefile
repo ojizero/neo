@@ -48,10 +48,24 @@ mk-symlinks:
 
 vim-installs: vim-PlugInstall
 	@\pip3 install --user --upgrade neovim ;
+	@$(MAKE) you-complete-me-install ;
 
-# This may fails on C#
-you-complete-me-install-all:
-	@\python3 $(PLUGINS_DATA_PATH)/YouCompleteMe/install.py --all ;
+you-complete-me-install: you-complete-me-setup
+	@\python3 $(PLUGINS_DATA_PATH)/YouCompleteMe/install.py \
+		--go-completer \
+		--rust-completer \
+		--racer-completer ;
+
+you-complete-me-setup: rs-completions js-completions py-completions
+
+rs-completions:
+	@\rustup component add rust-src ;
+
+js-completions:
+	@\npm install -g typescript ;
+
+py-completions:
+	@\pip3 install --user --upgrade jedi ;
 
 vim-PlugInstall:
 	@\nvim -u $(PLUGINS_VIM_PATH) +PlugInstall +qall ;
