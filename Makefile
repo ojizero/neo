@@ -52,9 +52,9 @@ vim-installs: vim-PlugInstall
 
 you-complete-me-install: you-complete-me-setup
 	@\python3 $(PLUGINS_DATA_PATH)/YouCompleteMe/install.py \
+		--clang-completer \
 		--go-completer \
-		--rust-completer \
-		--racer-completer ;
+		--rust-completer ;
 
 you-complete-me-setup: rs-completions js-completions py-completions
 

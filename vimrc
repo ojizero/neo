@@ -34,6 +34,9 @@ set mouse=a
 " write new files when made
 autocmd BufNewFile * :write
 
+" case insenstive files completion
+set wildignorecase
+
 "" Indents
 ""
 filetype indent on
