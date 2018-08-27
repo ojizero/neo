@@ -40,7 +40,8 @@ set mouse=a
 " write new files when made
 autocmd BufNewFile * :write
 
-" case insenstive files completion
+" case insenstive everything
+set ignorecase
 set wildignorecase
 
 "" Indents
