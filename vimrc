@@ -22,11 +22,17 @@ syntax on
 set guifont=Operator\ Mono:h14
 
 " set highlight indicating long lines
-set colorcolumn=90
+set colorcolumn=91
 highlight ColorColumn ctermbg=darkgrey guibg=darkgrey
 
 set number
 set showmatch
+
+set splitbelow
+set splitright
+
+" use system clipboard
+set clipboard=unnamedplus
 
 " enable mouse interractions
 set mouse=a

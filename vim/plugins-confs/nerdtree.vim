@@ -2,7 +2,12 @@ let NERDTreeIgnore = [
       \'node_modules',
       \'dist',
       \'vendor',
+      \'.git',
+      \'.vscode',
       \]
+
+" show dotfiles
+let NERDTreeShowHidden=1
 
 " open nerdtree on vim start
 autocmd vimenter * NERDTree
