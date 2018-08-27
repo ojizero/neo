@@ -35,8 +35,10 @@ Plug 'terryma/vim-multiple-cursors'
 " JavaScript improved support
 Plug 'pangloss/vim-javascript'
 
-" Rust imporved support
+" Syntax checker
+Plug 'vim-syntastic/syntastic'
 
-call cargo#init()
+" Rust imporved support
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
