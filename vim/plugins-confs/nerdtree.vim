@@ -14,7 +14,7 @@ autocmd vimenter * NERDTree
 
 " persist nerd tree state
 " autocmd bufenter * NERDTreeMirror " this is standard nerdtree cmd
-autocmd bufenter * NERDTreeMirrorOpen
+" autocmd bufenter * NERDTreeMirrorOpen
 
 " " open nerdtree on vim start to a specific folder
 " autocmd StdinReadPre * let s:std_in=1
