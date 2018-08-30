@@ -3,10 +3,10 @@ let s:path = expand('<sfile>:p:h')
 "" Misc
 ""
 
-" when only one window is left (nerrdtree)
-" don't close, just open an empty buffer
-" this has no effect on :qa, only on :q
-autocmd QuitPre * if winnr('$') == 1 | new | endif
+" when only one window is left don't close,
+" just open an empty buffer this has
+" no effect on :qa, only on :q
+autocmd QuitPre * if winnr('$') == 1 && tabpagenr('$') == 1 && @% != '' | new | endif
 
 " highlight shebangs as comments (mainly for
 " languages that don't use # for comments)
