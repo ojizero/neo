@@ -41,4 +41,10 @@ Plug 'vim-syntastic/syntastic'
 " Rust imporved support
 Plug 'rust-lang/rust.vim'
 
+" Fuzzy finder
+Plug 'junegunn/fzf'
+
+" Status line
+Plug 'vim-airline/vim-airline'
+
 call plug#end()
