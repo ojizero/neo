@@ -32,4 +32,9 @@ Update the cloned repo, or run `make update`.
 
 Run `make remove` and remove the repo.
 
-## Configurations included
+<!-- ## Configurations included-->
+
+## Caveats
+
+- This is still a work in progress, more things are being added as I need them, these configs are stable enough to get me through the day for now.
+- The Makefile setup is only made for NeoVim so far, general setup changes will come soon :grimacing:.
