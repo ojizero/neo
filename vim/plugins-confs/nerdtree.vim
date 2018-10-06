@@ -4,13 +4,14 @@ let NERDTreeIgnore = [
       \'vendor',
       \'.git',
       \'.vscode',
+      \'.DS_Store',
       \]
 
 " show dotfiles
 let NERDTreeShowHidden=1
 
 " open nerdtree on vim start
-autocmd vimenter * NERDTree
+"autocmd vimenter * NERDTree
 
 " persist nerd tree state
 " autocmd bufenter * NERDTreeMirror " this is standard nerdtree cmd
